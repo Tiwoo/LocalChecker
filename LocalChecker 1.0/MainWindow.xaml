@@ -1,0 +1,46 @@
+﻿<Window x:Class="LocalChecker_1._0.MainWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        Title="Local Checker" Width="550" Height="585" ResizeMode="NoResize">
+    <Grid x:Name="LocalChecker_1_0_Form" Background="#FF3754B8" Margin="0,0,0,-1">
+        <ComboBox x:Name="marketSelector" HorizontalAlignment="Left" Margin="77,99,0,0" VerticalAlignment="Top" Width="81" SelectionChanged="marketSelector_SelectionChanged">
+            <ComboBoxItem >fr-fr</ComboBoxItem>
+            <ComboBoxItem >de-de</ComboBoxItem>
+            <ComboBoxItem >en-gb</ComboBoxItem>
+            <ComboBoxItem >it-it</ComboBoxItem>
+            <ComboBoxItem>ru-ru</ComboBoxItem>
+            <ComboBoxItem>es-es</ComboBoxItem>
+        </ComboBox>
+        <ComboBox x:Name="locationSelector" HorizontalAlignment="Left" Margin="356,38,0,0" VerticalAlignment="Top" Width="120">
+            <ComboBoxItem>Paris</ComboBoxItem>
+            <ComboBoxItem>Munich</ComboBoxItem>
+            <ComboBoxItem>London</ComboBoxItem>
+            <ComboBoxItem>Rome</ComboBoxItem>
+            <ComboBoxItem>Moscow</ComboBoxItem>
+            <ComboBoxItem>Madrid</ComboBoxItem>
+        </ComboBox>
+        <Label x:Name="marketLabel" Content="Market" HorizontalAlignment="Left" Margin="22,95,0,0" VerticalAlignment="Top" RenderTransformOrigin="-0.026,0.769" FontWeight="Bold" FontStyle="Italic"/>
+        <Label x:Name="locationLabel" Content="Location" HorizontalAlignment="Left" Margin="296,38,0,0" VerticalAlignment="Top" FontStyle="Italic" FontWeight="Bold"/>
+        <RichTextBox x:Name="queriesTextBox" HorizontalAlignment="Left" Height="230" Margin="22,238,0,0" VerticalAlignment="Top" Width="329" IsUndoEnabled="True" Cursor="Arrow" ScrollViewer.CanContentScroll="True" ScrollViewer.VerticalScrollBarVisibility="Visible" TextChanged="queriesTextBox_TextChanged" IsDocumentEnabled="True" AllowDrop="True">
+            <RichTextBox.Resources>
+                <Style TargetType="{x:Type Paragraph}">
+                    <Setter Property="Margin" Value="0"/>
+                </Style>
+            </RichTextBox.Resources>
+            <FlowDocument/>
+
+        </RichTextBox>
+        <Label x:Name="queriesRichTextBoxLabel" Content="Enter your queries here (one per line)" HorizontalAlignment="Left" Margin="22,198,0,0" VerticalAlignment="Top" FontStyle="Italic"/>
+        <Button x:Name="queriesImportButton" Content="Click here to import queries from a Text File" HorizontalAlignment="Left" Margin="22,499,0,0" VerticalAlignment="Top" Width="244" Click="queriesImportButton_Click"/>
+        <CheckBox x:Name="queriesImportCheckBox" Content="Queries imported" HorizontalAlignment="Left" Margin="296,504,0,0" VerticalAlignment="Top"/>
+        <Button x:Name="runButton" Content="Run" HorizontalAlignment="Left" Height="37" Margin="393,401,0,0" VerticalAlignment="Top" Width="83" Background="#FFD6A041" FontWeight="Bold" FontStyle="Italic" Click="runButton_Click"/>
+        <ComboBox x:Name="featureSelector" HorizontalAlignment="Left" Margin="77,42,0,0" VerticalAlignment="Top" Width="146">
+            <ComboBoxItem>Local Answer</ComboBoxItem>
+            <ComboBoxItem>Snapshot (Taskpane)</ComboBoxItem>
+            <ComboBoxItem>Weather Answer</ComboBoxItem>
+            <ComboBoxItem>News Answer</ComboBoxItem>
+        </ComboBox>
+        <Label x:Name="featureLabel" Content="Feature" HorizontalAlignment="Left" Margin="22,38,0,0" VerticalAlignment="Top" FontWeight="Bold" FontStyle="Italic"/>
+
+    </Grid>
+</Window>
